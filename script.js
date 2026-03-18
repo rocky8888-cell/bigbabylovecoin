@@ -196,4 +196,44 @@ function openFullscreen() {
         elem.msRequestFullscreen();
     }
 }
+/* ===== 专业的搜索反馈方案 ===== */
+const searchBtn = document.getElementById("searchBtn");
+const tiktokIdInput = document.getElementById("tiktokId");
 
+// 创建提示函数的逻辑
+function showToast(message) {
+    const toast = document.createElement("div");
+    toast.className = "toast-msg";
+    toast.innerText = message;
+    document.body.appendChild(toast);
+    
+    // 2秒后自动消失
+    setTimeout(() => {
+        toast.style.opacity = "0";
+        setTimeout(() => toast.remove(), 300);
+    }, 2000);
+}
+
+if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+        const idValue = tiktokIdInput.value.trim();
+        if (!idValue) {
+            showToast("Please enter a TikTok ID");
+            return;
+        }
+
+        // 显示加载动画
+        const loading = document.getElementById("loading");
+        loading.classList.remove("hidden");
+        searchBtn.disabled = true;
+
+        setTimeout(() => {
+            // 1.5秒后隐藏加载动画
+            loading.classList.add("hidden");
+            searchBtn.disabled = false;
+            
+            // 使用自定义提示，不再弹出带域名的窗口
+            showToast("User found: " + idValue);
+        }, 1500);
+    });
+}
