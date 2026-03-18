@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>TikTok</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="topbar">
+        <img src="images/logo.png" class="logo" alt="logo">
+        <div class="brand-text">
+            <div class="title">TikTok</div>
+            <div class="subtitle">Purchase Coins</div>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-row">
+        <input id="tiktokId" type="text" placeholder="Enter TikTok ID">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Title -->
+    <div class="container">
+        <h1>Purchase TikTok Coins</h1>
+    </div>
+
+    <!-- Coins Grid -->
+    <div id="coinsGrid" class="grid"></div>
+
+    <!-- TikTok Extra Banner -->
+    <div class="extra-img-box">
+        <img src="images/extra_banner.jpg" class="extra-img" alt="banner">
+    </div>
+
+    <!-- Selected Summary -->
+    <div class="summary-row">
+        <div class="selected-info">
+            <div id="selectedText">Selected: 0 Coins</div>
+            <div id="selectedUSD">US$0.00</div>
+        </div>
+        <button id="payBtn" class="recharge-btn" disabled>Recharge</button>
+    </div>
+
+    <!-- Payment Modal (centered, larger) -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-box payment-centered">
+            <h2>Choose payment method</h2>
+
+            <div class="method-row">
+                <div class="method"><img class="payicon" src="images/pay_applepay.svg" alt="apple"> Apple Pay</div>
+                <div class="method"><img class="payicon visa-icon" src="images/visa_logo.png" alt="visa"> Visa ******61941</div>
+                <div class="method"><img class="payicon" src="images/pay_paypal.svg" alt="paypal"> PayPal</div>
+                <div class="method"><img class="payicon" src="images/pay_mastercard.svg" alt="mc"> Mastercard</div>
+            </div>
+
+            <div class="modal-actions">
+                <button id="cancelPay" class="modal-btn-gray">Cancel</button>
+                <button id="confirmPay" class="modal-btn-red">Recharge</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-box success-box">
+            <img id="checkmark" src="images/check_success.svg" alt="ok">
+            <div id="successText">Payment completed</div>
+            <div id="coins">Recharged 0 Coins</div>
+            <button id="goBack" class="recharge-btn">Go Back</button>
+        </div>
+    </div>
+
+    <!-- Custom Coins Popup -->
+    <div id="customModal" class="modal bottom">
+        <div class="modal-box custom-box">
+            <button id="customBack" class="back-btn">&lt;</button>
+            <h2>Select Coin Amount</h2>
+            <div id="customRange" class="small-note">30 - 2,500,000</div>
+
+            <div class="custom-input-area">
+                <div id="customInputBox" class="custom-input">0</div>
+                <div id="customModalCoins" class="custom-summary-line">0 Coins</div>
+                <div id="customModalUSD" class="custom-summary-line">US$0.00</div>
+            </div>
+
+            <div class="number-grid">
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="del">⌫</button>
+
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="num">000</button>
+
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="num">0</button>
+            </div>
+
+            <button id="customRechargeBtn" class="recharge-btn">Recharge</button>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <div class="loading-text">Processing...</div>
+    </div>
+
+    <!-- Fullscreen Button -->
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
